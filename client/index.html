@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Negociações</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
-
 </head>
-
 <body class="container">
-
     <h1 class="text-center">Negociações</h1>
-
     <div id="mensagemView"></div>
-
     <form class="form">
-
         <div class="form-group">
             <label for="data">Data</label>
             <input type="date" id="data" class="form-control" required autofocus />
@@ -58,11 +51,20 @@
         </thead>
 
         <tbody></tbody>
-
         <tfoot></tfoot>
     </table>
-
+    
     <div id="negociacoesView"></div>
-    <script src="js/index.js"></script>
+    <script src="js/app/models/Negociacao.js"></script>
+    <script>
+        const n1 = new Negociacao(new Date(), 10, 200.50);
+        console.log(n1.quantidade) // undefined
+        console.log(n1._quantidade) // 10 - Forma errada
+        console.log(n1.getQuantidade()) // 10 - Forma certa
+        console.log(n1.getData()) // Wed Sep 01 2021 11:45:24 GMT-0300 (Horário Padrão de Brasília)
+        console.log(n1.getValor()) // 200.5
+        console.log(n1.getVolume()) // 2005
+
+    </script>
 </body>
 </html>
