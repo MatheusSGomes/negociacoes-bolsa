@@ -57,13 +57,14 @@
     <div id="negociacoesView"></div>
     <script src="js/app/models/Negociacao.js"></script>
     <script>
-        const n1 = new Negociacao(new Date(), 10, 200.50);
-        console.log(n1.quantidade) // undefined
-        console.log(n1._quantidade) // 10 - Forma errada
-        console.log(n1.getQuantidade()) // 10 - Forma certa
-        console.log(n1.getData()) // Wed Sep 01 2021 11:45:24 GMT-0300 (Horário Padrão de Brasília)
-        console.log(n1.getValor()) // 200.5
-        console.log(n1.getVolume()) // 2005
+        const n1 = new Negociacao(new Date(), 5, 700);
+        console.log(n1.data)
+        // Thu Sep 02 2021 11:17:17 GMT-0300 (Horário Padrão de Brasília)
+        
+        n1.data.setDate(11)
+        
+        console.log(n1.data)
+        // Thu Sep 02 2021 11:14:34 GMT-0300 (Horário Padrão de Brasília)
 
     </script>
 </body>
