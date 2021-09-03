@@ -57,14 +57,16 @@
     <div id="negociacoesView"></div>
     <script src="js/app/models/Negociacao.js"></script>
     <script>
-        const n1 = new Negociacao(new Date(), 5, 700);
+        const hoje = new Date()
+
+        const n1 = new Negociacao(hoje, 5, 700);
         console.log(n1.data)
-        // Thu Sep 02 2021 11:17:17 GMT-0300 (Horário Padrão de Brasília)
+        // Fri Sep 03 2021 10:27:59 GMT-0300 (Horário Padrão de Brasília)
         
-        n1.data.setDate(11)
+        hoje.setTime(15)
         
         console.log(n1.data)
-        // Thu Sep 02 2021 11:14:34 GMT-0300 (Horário Padrão de Brasília)
+        // Wed Dec 31 1969 21:00:00 GMT-0300 (Horário Padrão de Brasília)
 
     </script>
 </body>
