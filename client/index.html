@@ -9,7 +9,7 @@
 <body class="container">
     <h1 class="text-center">Negociações</h1>
     <div id="mensagemView"></div>
-    <form class="form">
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
         <div class="form-group">
             <label for="data">Data</label>
             <input type="date" id="data" class="form-control" required autofocus />
@@ -56,17 +56,9 @@
     
     <div id="negociacoesView"></div>
     <script src="js/app/models/Negociacao.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
     <script>
-        const hoje = new Date()
-
-        const n1 = new Negociacao(hoje, 5, 700);
-        console.log(n1.data)
-        // Fri Sep 03 2021 10:27:59 GMT-0300 (Horário Padrão de Brasília)
-        
-        hoje.setTime(15)
-        
-        console.log(n1.data)
-        // Wed Dec 31 1969 21:00:00 GMT-0300 (Horário Padrão de Brasília)
+        const negociacaoController = new NegociacaoController()
 
     </script>
 </body>
