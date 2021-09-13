@@ -11,7 +11,6 @@ class Negociacao {
   }
 
   get data() {
-    console.log(new Date(this._data.getTime()))
     return new Date(this._data.getTime());
   }
 
