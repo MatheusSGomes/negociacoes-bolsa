@@ -28,6 +28,31 @@ class NegociacaoController {
     this._limpaFormulario();
   }
 
+  importaNegociacoes() {
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'negociacoes/semana');
+
+    /* configurações */
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState == 4) {
+
+        // recuperar dados vindos do servidor.
+        if(xhr.status == 200) {
+
+          // apenas se a resposta for válida
+        } else {
+          console.log('ERRO: Não foi possível obter as negociações do servidor.')
+        }
+      }
+    }
+
+    xhr.send();
+
+    alert('importando negociações')
+  }
+
+
   apaga() {
     this._listaNegociacoes.esvazia();
     this._mensagem.texto = 'Negociações apagadas com sucesso';
@@ -49,4 +74,5 @@ class NegociacaoController {
 
     this._inputData.focus();
   }
+
 }
