@@ -40,9 +40,16 @@ class NegociacaoController {
         // recuperar dados vindos do servidor.
         if(xhr.status == 200) {
 
-          // apenas se a resposta for válida
+          console.log('Obtendo resposta do servidor.')
+
+          JSON.parse(xhr.responseText)
+            .map((objeto) => new Negociacao(new Date(objeto.data), objeto.quantidade, objeto.valor))
+            .forEach(negociacao => this._listaNegociacoes.adiciona(negociacao));
+
+          this._mensagem.texto = 'Negociações importadas com sucesso'
         } else {
-          console.log('ERRO: Não foi possível obter as negociações do servidor.')
+          console.log(xhr.responseText)
+          this._mensagem.texto = 'Não foi possível obter as negociações da semana'
         }
       }
     }
