@@ -6,7 +6,7 @@ class ProxyFactory {
       get(target, prop, receiver) {
           if(props.includes(prop) && ProxyFactory._ehFuncao(target[prop])) {
               return function() {
-                  console.log(`interceptando ${prop}`);
+                  // console.log(`interceptando ${prop}`);
 
                   Reflect.apply(target[prop], target, arguments)
                   
