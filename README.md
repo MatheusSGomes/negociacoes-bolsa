@@ -1,0 +1,2 @@
+# Negociações
+![](./screenshot.gif)
