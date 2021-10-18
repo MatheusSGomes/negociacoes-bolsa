@@ -9,6 +9,7 @@ Esse é um projeto feito através das aulas de JavaScript avançado da Alura.
 - [x] Padrão de projeto Proxy
 - [x] Padrão de projeto Factory
 - [x] Lidar com Callback Hell e Promises
+- [x] Trabalhando com AJAX para importar negociações
 
 ## Telas do Sistema:
 ![](./screenshot.gif)
